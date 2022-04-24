@@ -1,7 +1,7 @@
 name: Run Crypto Webhook Bots
 on:
   schedule:
-         - cron: "0 */6 * * *"      
+         - cron: "0 */2 * * *"      
   push:
     branches: [ main ]
 jobs:
