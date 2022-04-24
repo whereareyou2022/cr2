@@ -69,7 +69,7 @@ def getUpCoinData():
           price = "시세 : " + contents[idx].select_one('td:nth-of-type(3) > span').text
           result += info +"\n" + name + "\n" + rate + "\n" + price + "\n\n"
 
-      return "*:white_check_mark: 급등코인 종목 top3*\n\n"+ result
+      return "*:white_check_mark: 급등코인 종목 top10*\n\n"+ result
 
   else:
       return None
@@ -84,7 +84,7 @@ def getDownCoinData():
       contents = soup.select('#__next > div > div.main-content > div.sc-57oli2-0.comDeo.cmc-body-wrapper > div > div.sc-1yw69nc-0.DaVcG.table-wrap > div > div:nth-of-type(2) > div > table > tbody > tr')
       result = ""
 
-      for idx in range(0, 3):
+      for idx in range(0, 10):
 
           info = ":medal:*"+str(idx + 1)+"위 급락 코인* → " + contents[idx].select_one('td:nth-of-type(2) > a > div > div > p').text
           name = "코드 : " + contents[idx].select_one('td:nth-of-type(2) > a > div > div > div > p').text
@@ -92,7 +92,7 @@ def getDownCoinData():
           price = "시세 : " + contents[idx].select_one('td:nth-of-type(3) > span').text
           result += info +"\n" + name + "\n" + rate + "\n" + price + "\n\n"
 
-      return "*:white_check_mark: 급락코인 종목 top3*\n\n"+ result
+      return "*:white_check_mark: 급락코인 종목 top10*\n\n"+ result
   else:
       return None
 
